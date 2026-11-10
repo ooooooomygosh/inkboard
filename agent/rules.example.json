@@ -1,0 +1,14 @@
+{
+  "sources": { "inkboard": { "name": "InkBoard 看板" } },
+  "rules": [
+    {
+      "name": "InkBoard 代办",
+      "when": { "source": "inkboard", "types": ["inkboard.task"] },
+      "to": "claude",
+      "cwd": "~/InkBoard/agent-work",
+      "skill": "inkboard-task",
+      "parallel": 2,
+      "resume": true
+    }
+  ]
+}

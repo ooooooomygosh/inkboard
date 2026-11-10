@@ -1,0 +1,32 @@
+# secrets and per-deployment config
+server/.dev.vars
+server/.prod.vars
+server/wrangler.toml
+server/.backups/
+android/keys/
+android/debloat.txt
+
+# personal pictures for the ledger page (see docs/ledger.md)
+server/public/custom/
+
+# build output and caches
+server/node_modules/
+.wrangler/
+server/.wrangler/
+server/public/assets/
+android/build/
+**/__pycache__/
+*.pyc
+.DS_Store
+.!*
+
+# upgrade scripts of an existing deployment; fresh installs use schema.sql
+server/migrate_*.sql
+
+# local notes, third-party binaries, editor state
+PLAN.md
+*.pdf
+*.png.preview
+记账图标预览.png
+vendor/
+.claude/

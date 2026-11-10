@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.inkboard">
+  <!-- Signed with the AOSP platform key: every signature-level permission below is granted. -->
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+  <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+  <uses-permission android:name="android.permission.SET_TIME_ZONE"/>
+  <uses-permission android:name="android.permission.INSTALL_PACKAGES"/>
+  <uses-permission android:name="android.permission.DELETE_PACKAGES"/>
+  <uses-permission android:name="android.permission.REBOOT"/>
+  <uses-permission android:name="android.permission.DEVICE_POWER"/>
+  <uses-permission android:name="android.permission.REAL_GET_TASKS"/>
+  <uses-permission android:name="android.permission.INJECT_EVENTS"/>
+  <uses-permission android:name="android.permission.REORDER_TASKS"/>
+
+  <application
+      android:label="InkBoard"
+      android:icon="@android:drawable/sym_def_app_icon"
+      android:allowBackup="false"
+      android:usesCleartextTraffic="true"
+      android:largeHeap="true"
+      android:hardwareAccelerated="true">
+    <activity
+        android:name=".MainActivity"
+        android:launchMode="singleTask"
+        android:stateNotNeeded="true"
+        android:clearTaskOnLaunch="true"
+        android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation|uiMode"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar.Fullscreen"
+        android:windowSoftInputMode="adjustResize">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.HOME"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+    <receiver android:name=".BootReceiver" android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+        <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+      </intent-filter>
+    </receiver>
+  </application>
+</manifest>

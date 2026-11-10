@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+html,body{margin:0;height:100%;background:#fff;color:#000;font-family:sans-serif}
+.w{display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%;gap:18px;text-align:center;padding:0 40px}
+h1{font-size:44px;margin:0} p{font-size:20px;margin:0;color:#444} .t{font-size:96px;font-weight:700;letter-spacing:-2px}
+button{font-size:22px;padding:14px 28px;border:3px solid #000;background:#fff;border-radius:10px}
+</style>
+<div class="w"><div class="t" id="t"></div><h1>看板暂时连不上服务器</h1><p id="m">每 30 秒自动重试</p>
+<div style="display:flex;gap:16px"><button onclick="Ink.reload()">立即重试</button><button onclick="Ink.openWifi()">Wi-Fi 设置</button></div></div>
+<script>
+function tick(){var d=new Date();t.textContent=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')}
+tick();setInterval(tick,30000);setTimeout(function(){Ink.reload()},30000);
+try{m.textContent='服务器：'+Ink.serverUrl()+' · 每 30 秒自动重试'}catch(e){}
+</script></html>

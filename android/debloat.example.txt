@@ -1,0 +1,6 @@
+# One package per line. Find yours with: adb shell pm list packages -f
+# Typical candidates on an Android e-ink reader:
+com.example.vendor.launcher      # stock launcher / bookstore (InkBoard becomes the home screen)
+com.example.vendor.ota           # system OTA, so an update cannot undo your changes
+com.example.vendor.factorytest   # factory / aging test apps
+com.android.browser              # stock browser

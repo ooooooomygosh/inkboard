@@ -1,0 +1,20 @@
+name = "inkboard"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/", "/d", "/c", "/m", "/admin", "/admin/*", "/api/*", "/login", "/mascot/*", "/money-icon-*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "inkboard"
+database_id = "<your D1 database_id>"   # npx wrangler d1 create inkboard
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[observability]
+enabled = true

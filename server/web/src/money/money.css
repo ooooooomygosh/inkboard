@@ -1,0 +1,101 @@
+.money h1 { font-size: 40px; font-variant-numeric: tabular-nums; }
+.money .split { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.money .split div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; display: flex; flex-direction: column; min-width: 0; }
+.money .split span { font-size: 12px; color: var(--ink2); }
+.money .split b { font: 400 24px/1.2 "InkDisp", "InkSC", sans-serif; font-variant-numeric: tabular-nums; }
+.money .sub { font-size: 12px; color: var(--ink3); margin: -4px 2px 0; }
+.money .who { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink2); }
+.money .who span { margin-right: 4px; }
+.money .who button { padding: 4px 14px; font-size: 14px; }
+.money .who button.on { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.money textarea { min-height: 84px; }
+.money .ok { color: var(--ink2); font-size: 14px; }
+.money .owe { display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1.5px solid var(--ink); }
+.money .owe-t { font-size: 13px; color: var(--ink2); }
+.money .owe-v { font: 400 30px/1.1 "InkDisp", "InkSC", sans-serif; }
+.money ul { list-style: none; margin: 0; padding: 0; }
+.money .fixed li, .money .recent li { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line); }
+.money .fixed li:first-child, .money .recent li:first-child { border-top: 0; }
+.money .fx-main, .money .r-m { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.money .fx-main span, .money .r-m span, .money .fx-side span { font-size: 12px; color: var(--ink2); }
+.money .r-m b, .money .fx-main b { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.money .fx-side { display: flex; flex-direction: column; align-items: flex-end; }
+.money .fx-side small { font-size: 11px; color: var(--ink3); font-weight: 400; }
+.money .r-d { font-size: 12px; color: var(--ink3); width: 36px; flex: none; font-variant-numeric: tabular-nums; }
+.money .r-v { font-variant-numeric: tabular-nums; font-weight: 600; display: flex; flex-direction: column; align-items: flex-end; }
+.money .r-v small { font-size: 11px; color: var(--ink3); font-weight: 400; }
+.money .recent li.settle { color: var(--ink2); }
+.money .x { border: 0; color: var(--ink3); font-size: 18px; padding: 2px 6px; flex: none; }
+.money .cats li { display: grid; grid-template-columns: 52px 1fr 64px; align-items: center; gap: 8px; padding: 4px 0; font-size: 14px; }
+.money .cats i { height: 8px; border-radius: 4px; background: var(--ink); display: block; min-width: 2px; }
+.money .cats b { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.money .more { margin-top: 8px; width: 100%; }
+@media (max-width: 380px) { .money .split b { font-size: 20px; } }
+
+/* ---------------- partner page: soft "cute" look (html.cute) ---------------- */
+html.cute:root {
+  --bg: #fde7ec; --card: #fffaf3; --ink: #5b3a24; --ink2: #96705a; --ink3: #c09a86; --line: #f4cdd6;
+  --accent: #8b5a2b; --on-accent: #fffaf3; --warn: #c2416b; color-scheme: light;
+}
+html.cute body { background: #fde7ec radial-gradient(#f9d3dc 1.5px, transparent 1.5px) 0 0 / 22px 22px; }
+.cute .money header { position: relative; min-height: 112px; padding-right: 128px; }
+.cute .mascot { position: absolute; right: -4px; top: 0; width: 138px; height: auto; pointer-events: none; }
+.cute .money h1 { color: #6b4126; }
+.cute .money .date { color: #b07a8a; font-weight: 600; letter-spacing: .08em; }
+.cute .card, .cute .composer { border: 2px solid #f4cdd6; border-radius: 24px; box-shadow: 0 4px 0 #f4cdd6; }
+.cute .money .split div { border: 2px solid transparent; border-radius: 20px; box-shadow: 0 3px 0 rgba(139, 90, 43, .12); }
+.cute .money .split div:nth-child(1) { background: #f6e4d2; }
+.cute .money .split div:nth-child(2) { background: #ffe0e8; }
+.cute .money .split div:nth-child(3) { background: #fff1c2; }
+.cute .money .split span { color: #8b5a2b; font-weight: 600; }
+.cute .money .split b { color: #5b3a24; }
+.cute .money .who button { border: 2px solid #f4cdd6; background: #fffaf3; color: #8b5a2b; }
+.cute .money .who button.on { background: #c98a54; border-color: #c98a54; color: #fffaf3; }
+.cute .go { background: #ffd84d; border-color: #ffd84d; color: #5b3a24; box-shadow: 0 3px 0 #e8b92a; }
+.cute .go:disabled { opacity: .5; }
+.cute .money .owe { border: 2px dashed #e9a7b5; background: #fff4f6; }
+.cute .money .owe-v { color: #c2416b; }
+.cute .money .owe button { border: 2px solid #e9a7b5; color: #c2416b; background: #fffaf3; }
+.cute .money .cats i { background: linear-gradient(90deg, #c98a54, #e9b483); height: 10px; border-radius: 6px; }
+.cute h2 { color: #8b5a2b; }
+.cute h2::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #ffd84d; margin-right: 8px; box-shadow: 0 0 0 2px #f6c445; }
+.cute h2 { justify-content: flex-start; gap: 0; }
+.cute h2 small { margin-left: auto; }
+.cute .money .x { color: #d9a6b3; }
+.cute .money .r-d { color: #c09a86; }
+.cute .money .ok { color: #8b5a2b; }
+@media (max-width: 380px) { .cute .money header { padding-right: 104px; } .cute .mascot { width: 112px; } }
+
+/* ---------------- little notes ---------------- */
+.money .nt li { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line); }
+.money .nt li:first-child { border-top: 0; }
+.money .nt-m { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.money .nt-m b { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.money .nt-m span { font-size: 12px; color: var(--ink2); }
+.money .nt-dot { width: 12px; height: 12px; border-radius: 50%; flex: none; background: var(--line); }
+.money .nt-ack .nt-dot { background: #f6c445; }
+.money .nt-done .nt-dot { background: #7cc47f; }
+.money .nt-later .nt-dot { background: #e9a7b5; }
+.money .nt-done b { text-decoration: line-through; text-decoration-color: var(--ink3); }
+.fab { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 20;
+  display: flex; align-items: center; gap: 6px; padding: 6px 16px 6px 6px; border-radius: 999px; border: 2px solid #f6c445;
+  background: #fff8d6; color: #8b5a2b; font-weight: 700; font-size: 14px; box-shadow: 0 4px 0 #e8b92a, 0 8px 20px rgba(139, 90, 43, .18); }
+.fab img { width: 44px; height: 44px; object-fit: contain; }
+.fab:active { transform: translateY(2px); box-shadow: 0 2px 0 #e8b92a; }
+.sheet-bg { position: fixed; inset: 0; z-index: 30; background: rgba(91, 58, 36, .28); display: flex; align-items: flex-end; justify-content: center; }
+.sheet { position: relative; width: 100%; max-width: 640px; background: #fffaf3; border-radius: 28px 28px 0 0; padding: 30px 18px calc(18px + env(safe-area-inset-bottom));
+  border-top: 3px solid #f4cdd6; display: flex; flex-direction: column; gap: 10px; color: #5b3a24; }
+.sheet-chick { position: absolute; width: 64px; top: -46px; right: 28px; }
+.sheet h3 { margin: 0; font: 400 24px/1.2 "InkDisp", "InkSC", sans-serif; color: #6b4126; }
+.sheet-sub { margin: 0; font-size: 13px; color: #b07a8a; }
+.sheet .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.sheet .chips button { border: 2px solid #f4cdd6; background: #fff; color: #8b5a2b; border-radius: 999px; padding: 7px 14px; font-size: 15px; }
+.sheet .chips button:active { background: #ffe0e8; }
+.sheet textarea { min-height: 64px; border: 2px solid #f4cdd6; border-radius: 16px; padding: 10px 12px; background: #fff; font-size: 16px; color: #5b3a24; }
+.sheet .row { display: flex; justify-content: space-between; gap: 10px; }
+.sheet .ghost { border: 0; color: #b07a8a; }
+.sheet .go { background: #ffd84d; border-color: #ffd84d; color: #5b3a24; box-shadow: 0 3px 0 #e8b92a; }
+.sheet-sent { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 26px 0 18px; }
+.sheet-sent b { font: 400 30px/1.2 "InkDisp", "InkSC", sans-serif; color: #c2416b; }
+.sheet-sent span { font-size: 14px; color: #96705a; }
+.cute .money { padding-bottom: 96px; }

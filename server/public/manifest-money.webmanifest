@@ -1,0 +1,1 @@
+{"name": "记账", "short_name": "记账", "start_url": "/m", "display": "standalone", "background_color": "#fde7ec", "theme_color": "#f8d3db", "icons": [{"src": "/money-icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "/money-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}]}
