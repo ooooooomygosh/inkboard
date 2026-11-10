@@ -8,7 +8,9 @@
     "db:init": "wrangler d1 execute inkboard --local --file=schema.sql",
     "db:init:remote": "wrangler d1 execute inkboard --remote --file=schema.sql",
     "deploy": "node web/build.mjs && wrangler deploy",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "demo:seed": "esbuild demo/seed.ts --bundle --platform=node --format=esm --log-level=warning --outfile=.wrangler/demo/seed.mjs && wrangler d1 execute inkboard --local --persist-to .wrangler/demo --file=schema.sql && node .wrangler/demo/seed.mjs > .wrangler/demo/seed.sql && wrangler d1 execute inkboard --local --persist-to .wrangler/demo --file=.wrangler/demo/seed.sql",
+    "demo": "node web/build.mjs && wrangler dev --persist-to .wrangler/demo --port 8788 --test-scheduled"
   },
   "dependencies": {
     "hono": "^4.13.17",

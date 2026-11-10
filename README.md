@@ -4,7 +4,48 @@
 
 手机上随口说一句，AI 排好今天；Mac 上的 Claude Code、Codex 在跑什么、卡在哪、等你批准什么，抬眼就能看到；邮件、日程、截止日、额度、行情、两个人的账本，都在一块不发光、不打扰的屏幕上。
 
-[English summary](#english-summary) · [设计思路](docs/design.md) · [部署](docs/setup.md) · [改造墨水屏](docs/device.md) · [Agent 与“需要你”](docs/agents.md) · [记账与小纸条](docs/ledger.md)
+[English summary](#english-summary) · [设计思路](docs/design.md) · [部署](docs/setup.md) · [网页编辑器](docs/editor.md) · [改造墨水屏](docs/device.md) · [Agent 与“需要你”](docs/agents.md) · [记账与小纸条](docs/ledger.md)
+
+![概览页](docs/screenshots/board-home.png)
+
+> 截图里的人物、任务、邮件、仓库、账目都是虚构的演示数据，`npm run demo` 就能在本地跑出同样的画面。
+
+---
+
+## 界面一览
+
+### 墨水屏
+
+| | |
+|---|---|
+| ![工作](docs/screenshots/board-work.png)<br>**工作**：进行中的 Agent 会话和交给 AI 的代办，右边是“需要你”，下面是按研究焦点挑的论文 | ![开发](docs/screenshots/board-dev.png)<br>**开发**：GitHub 待 review 的 PR 和 CI 状态，订阅额度按“谁先用完”排序，底部是 API 余额 |
+| ![生活](docs/screenshots/board-life.png)<br>**生活**：逐小时天气、未来 7 天日程、行情（含美股盘前）、额度、两个人的账本 | ![专注](docs/screenshots/board-focus.png)<br>**专注**：超大时钟，轻点开始 25 分钟番茄钟；底部是当前计划块、AI 建议和等你的 Agent |
+| ![更多](docs/screenshots/board-more.png)<br>**更多组件**：时间日期、今日 Token、Agent 状态、最近截止、重要邮件、Agent 列表、截止日、备忘、座右铭 | ![夜间](docs/screenshots/board-night.png)<br>**夜间屏**：只剩时间、明天天气和明天第一件事，点一下回到看板 |
+
+所有页面和组件都可以在编辑器里自由增删、拖拽、改尺寸，也支持竖屏。
+
+### 手机
+
+<table>
+<tr>
+<td width="25%"><img src="docs/screenshots/phone-today.png" alt="今天"></td>
+<td width="25%"><img src="docs/screenshots/phone-money.png" alt="记账"></td>
+<td width="25%"><img src="docs/screenshots/phone-partner.png" alt="另一位的记账页"></td>
+<td width="25%"><img src="docs/screenshots/phone-partner-note.png" alt="小纸条"></td>
+</tr>
+<tr>
+<td><b>/c 今天</b>：一句话补充计划，在手机上处理“需要你”</td>
+<td><b>/m 记账</b>：说一句就记上，算出谁该给谁</td>
+<td><b>另一位的页面</b>：可爱主题，吉祥物可以换成自己的图</td>
+<td><b>小纸条</b>：使唤一下对方，会进对方的待办和日历</td>
+</tr>
+</table>
+
+### 网页编辑器
+
+![编辑器](docs/screenshots/editor-props.png)
+
+左边是组件库和各类设置，中间是阅读器的实时画布，右边是选中组件的属性。拖拽排版、改数据源、管理 AI 的长期记忆、看阅读器状态、远程刷新和重启，都在这一个页面里完成。逐项介绍见 [docs/editor.md](docs/editor.md)。
 
 ---
 
@@ -82,6 +123,8 @@ cp wrangler.toml.example wrangler.toml   # 填上你的 D1 database_id
 cp .dev.vars.example .dev.vars           # 本地开发用的三个口令
 npm run db:init && npm run dev           # 本地预览：http://localhost:8787/admin
 ```
+
+只想先看看效果：`npm run demo:seed && npm run demo`，会在一个独立的本地数据库里灌入截图里那套虚构数据，打开 http://localhost:8788/admin。
 
 上线、装 App、接 Mac 的完整步骤见 [docs/setup.md](docs/setup.md)。
 

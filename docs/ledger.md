@@ -2,6 +2,8 @@
 
 两个人一本账，说一句话就记上。页面是 `/m`，加到手机主屏幕后像 App 一样用。
 
+<p><img src="screenshots/phone-money.png" width="32%" alt="记账"> <img src="screenshots/phone-partner.png" width="32%" alt="另一位的页面"> <img src="screenshots/phone-partner-note.png" width="32%" alt="小纸条"></p>
+
 ## 怎么记
 
 在输入框里说（键盘上的麦克风就行）：

@@ -56,6 +56,8 @@ npm run dev            # http://localhost:8787
 
 ## 2. 编辑器（`/admin`）
 
+每个标签页的截图和说明见 [editor.md](editor.md)。
+
 用 `ADMIN_TOKEN` 登录，按标签页设置：
 
 - **设备 → 关于你**：城市、一两句自我介绍（会放进每次 AI 调用）、记账的两个名字和币种。

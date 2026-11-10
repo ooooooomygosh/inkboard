@@ -19,6 +19,7 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm run build:web
+      - run: npx esbuild demo/seed.ts --bundle --platform=node --format=esm --log-level=warning --outfile=/tmp/seed.mjs && node /tmp/seed.mjs > /dev/null
   scripts:
     runs-on: ubuntu-latest
     steps:
