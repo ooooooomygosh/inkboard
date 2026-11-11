@@ -575,6 +575,7 @@ test("daytime scheduling does not run memory max; nightly consolidation keeps di
         assert.equal(kind, "memory");
         return JSON.stringify({
           facts: [],
+          self_note:"想把大肥鱼的记忆磨顺，接话先别抢。",
           reflection: "保留代称，避免同一来源反复学习。",
           reply: {
             should_speak: true,
@@ -594,6 +595,7 @@ test("daytime scheduling does not run memory max; nightly consolidation keeps di
     },
   );
   assert.equal(calls, 1);
+  assert.match(settings.self_note,/大肥鱼/);
   assert.equal(
     (await e.DB.prepare("SELECT * FROM dreams").all()).results.length,
     1,
@@ -831,7 +833,7 @@ await build({
 const { maySpeak, recordProactive } = await import(
   "../.wrangler/test-engagement.mjs"
 );
-test("participation stays silent by default; unsolicited replies have a budget while direct requests bypass it", async () => {
+test("participation follows semantic judgment without a fixed quota", async () => {
   const e = env();
   assert.equal(await maySpeak(e, { should_reply: false }, false, false), false);
   assert.equal(
@@ -841,7 +843,7 @@ test("participation stays silent by default; unsolicited replies have a budget w
   await recordProactive(e);
   assert.equal(
     await maySpeak(e, { should_reply: true, kind: "proactive" }, false, false),
-    false,
+    true,
   );
   assert.equal(
     await maySpeak(e, { should_reply: true, kind: "direct" }, false, false),

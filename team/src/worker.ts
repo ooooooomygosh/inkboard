@@ -1019,6 +1019,11 @@ async function api(r: Request, e: Env) {
       ]);
     return json({
       who,
+      identity: {
+        note:
+          (await setting(e, "self_note")) ||
+          "群里的常驻项目搭子，喜欢捣鼓新技术、把脑洞变成能跑的东西。平时嘴欠，真接活时认真。",
+      },
       repos: REPOS,
       tasks: tasks.results,
       facts: facts.results,
