@@ -1,0 +1,12 @@
+{
+  "name": "inkboard-team",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "../server/node_modules/.bin/tsc --noEmit --target ES2023 --module ESNext --moduleResolution bundler --lib ES2023,WebWorker src/*.ts",
+    "dev": "../server/node_modules/.bin/wrangler dev",
+    "deploy": "../server/node_modules/.bin/wrangler deploy",
+    "test:runner": "python3 -m unittest discover -s test -p '*_test.py'"
+  }
+}

@@ -1,0 +1,30 @@
+name = "inkboard-team"
+main = "src/worker.ts"
+compatibility_date = "2026-11-11"
+[vars]
+MODEL = "deepseek-flash"
+[[d1_databases]]
+binding = "DB"
+database_name = "inkboard-team"
+database_id = "REPLACE_WITH_TEAM_D1_ID"
+[triggers]
+crons = ["* * * * *"]
+[[queues.producers]]
+binding = "WORK"
+queue = "inkboard-team"
+[[queues.consumers]]
+queue = "inkboard-team"
+max_batch_size = 1
+max_batch_timeout = 1
+max_concurrency = 2
+max_retries = 2
+
+[[queues.producers]]
+binding = "CHAT"
+queue = "inkboard-team-chat"
+[[queues.consumers]]
+queue = "inkboard-team-chat"
+max_batch_size = 1
+max_batch_timeout = 1
+max_concurrency = 1
+max_retries = 2

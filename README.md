@@ -159,3 +159,7 @@ InkBoard turns a spare Android e-ink reader into a calm, always-on AI desk dashb
 - **Stack**: Cloudflare Workers + D1 (Hono, Preact), a tiny Gradle-free Java launcher with a full-screen WebView and vendor e-ink refresh control, and a Python/Swift collector on the Mac.
 
 The UI and docs are in Chinese. Start with [docs/setup.md](docs/setup.md); the design notes are in [docs/design.md](docs/design.md). MIT licensed.
+
+## QQ 群协作与团队开发台
+
+独立团队部署、QQ 群消息接入、项目记忆、方案整理和本机 Agent 接力，见 [team/README.md](team/README.md)。团队数据使用独立数据库，与个人看板分开。
